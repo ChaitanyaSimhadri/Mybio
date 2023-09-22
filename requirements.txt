@@ -16,3 +16,4 @@ tqdm==4.66.1
 tzdata==2023.3
 whitenoise==6.5.0
 xgboost==2.0.0
+nltk
