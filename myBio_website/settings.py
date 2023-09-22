@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 import django_heroku 
 import dj_database_url
-import p
+import pandas as pd
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
