@@ -3,7 +3,6 @@ from pathlib import Path
 import os
 import django_heroku 
 import dj_database_url
-import pandas as pd
 
 
 
@@ -18,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)-nn!(6u&b*r10=xhj42jnc94i=9d%ui$hba(e2-%&1a@9x7vt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
