@@ -63,35 +63,35 @@ def get_estimated_price(location,BHK,total_sqft,bath):
        
         
 
-def predict(req):
+def predict(request):
        submitted = False
        y_pred = 0
        
        
 
-       if req.method == 'POST':
-              form =  predict_form(req.POST)
+       if request.method == 'POST':
+              form =  predict_form(request.POST)
               if form.is_valid():
                      
-                     location = req.POST.get('Location')
-                     BHK = req.POST.get('Bedrooms')
-                     total_sqft = req.POST.get('SQFT')
-                     bath = req.POST.get('BathRoom')
+                     location = request.POST.get('Location')
+                     BHK = request.POST.get('Bedrooms')
+                     total_sqft = request.POST.get('SQFT')
+                     bath = request.POST.get('BathRoom')
                      
                      y_pred = get_estimated_price(location, BHK, total_sqft, bath)
 
                      
-                     return render(req, 'predict.html', {'form': form, 'submitted': True, 'y_pred': y_pred,'location':location,'BHK':BHK,'total_sqft':total_sqft})
+                     return render(request, 'predict.html', {'form': form, 'submitted': True, 'y_pred': y_pred,'location':location,'BHK':BHK,'total_sqft':total_sqft})
        else:
               
-              form =  predict_form(req.POST)
-              if 'submitted' in req.GET:
+              form =  predict_form(request.POST)
+              if 'submitted' in request.GET:
                      
                      submitted = True 
               
                   
        
-       return render(req, 'predict.html',{'form':form, 'submitted':submitted,'y_pred':y_pred,'locations':locations})
+       return render(request, 'predict.html',{'form':form, 'submitted':submitted,'y_pred':y_pred,'locations':locations})
 
 
 
