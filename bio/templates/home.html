@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+	<title>NagaChaitanya'S Bio</title>
+
+	{% load static %}
+
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+	<!-- <link rel="stylesheet" href="{% static 'css/main_1.css' %}" /> -->
+
+
+</head>
+
+
+
+
+<body class="is-preload">
+
+
+
+
+	<!-- Header -->
+	<header id="header">
+
+
+
+
+		<ul class="icons">
+			<li><a href="#" class=""><span class="label">Blog</span></a></li>
+			<li><a href="https://github.com/ChaitanyaSimhadri" class="icon brands fa-github"><span
+						class="label">Github</span></a></li>
+			<li><a href="https://www.linkedin.com/in/nagachaitanya-simhadri/" class="icon brands fa-linkedin"><span class="label">Dribbble</span></a></li>
+			<li><a href="{% url 'contact' %}" class=""><span class="label">Contact</span></a></li>
+		</ul>
+
+
+
+
+
+
+		<div class="inner">
+			<br>Crafting Data-Driven Narratives | Unveiling Insights, One Dataset at a Time | Aspiring Data Scientist on
+			a Journey of Discovery! <br />
+			<br />
+			<a href="{% url 'home' %}" class="image avatar"><img src="{% static 'images/avarat1.jpg' %}" alt="" /></a>
+			<h1><strong>NagaChaitanya S</strong></h1>
+
+			Investigation specialist in Amazon
+
+
+
+		</div>
+	</header>
+
+
+	<!-- Main -->
+	<div id="main">
+
+		{% if messages %}
+
+		{% for message in messages%}
+
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			<strong>{{ message }}</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		  </div
+
+		
+
+		{% endfor %}
+
+		{% endif %}
+
+
+
+	
+		<!-- One -->
+		<section id="one">
+			<header class="major">
+				<h2>Career Summary<br /></h2>
+			</header>
+			<blockquote>Experienced Investigation Specialist with over 1 year of hands-on experience
+				at Amazon Development Center. Proven expertise in Fraud Risk Investigation within
+				the Ecommerce sector, coupled with a strong background in Client Relationship Management
+				from the Telecom industry. A dedicated team player with a track record of surpassing metric
+				targets, contributing to financial success through the elimination of Credit Card Chargebacks
+				and Financial frauds within the US and UK Ecommerce markets.</blockquote>
+
+
+		</section>
+
+		<header class="major">
+			<h2>Interests<br /></h2>
+		</header>
+
+		<blockquote>My passion lies at the intersection of data science and machine learning, where I thrive on
+			uncovering patterns, deriving insights, and making informed decisions. From the foundational steps of data
+			analysis, including exploratory data analysis, feature engineering, and feature selection, to the advanced
+			realms of supervised and unsupervised learning, I revel in the process of transforming raw data into
+			actionable knowledge. Natural Language Processing (NLP) fascinates me, allowing machines to comprehend and
+			generate human language effectively. I possess expertise in querying databases, cleaning data, and wrangling
+			complex datasets, enhancing predictive analytics and bolstering my proficiency in building and fine-tuning
+			machine learning models. With a keen eye on statistics, hypothesis testing, and quantitative analysis.
+		</blockquote>
+
+
+		<header class="major">
+			<h2>Key Skills<br /></h2>
+		</header>
+
+		<blockquote>
+
+			Data Analysis | Supervised learning | Unsupervised Learning | EDA | Feature engineering | Feature Selection | Data Visualization | NumPy | Natural Language Processing| Query Databases | Cleaning data |Data Science |Pandas | Data Wrangling | building ML | Predictive analytics | Complex Datasets | Statistics | Research | Quantitative Analysis | Machine Learning | Hypothesis Testing
+		</blockquote>
+
+
+
+		<section id="one">
+			<header class="major">
+				<h2>Education<br /></h2>
+
+
+
+				<div class="table-wrapper">
+					<table class="alt">
+						<thead>
+							<tr>
+								<th>Class</th>
+								<th>University</th>
+								<th>Year</th>
+								<th>Marks</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ms DataScience</td>
+								<td>Liverpool JohnMoores University</td>
+								<td>2023-Present</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>Executive PG Diploma(DataScience)</td>
+								<td>IIIT B & Upgrad</td>
+								<td>2022-2023</td>
+								<td>3.38 CGPA/4</td>
+							</tr>
+							<tr>
+								<td>BBA</td>
+								<td> Sikkim Manipal University</td>
+								<td>2017-2021</td>
+								<td>6CGPA/10</td>
+							</tr>
+
+
+						</tbody>
+
+					</table>
+				</div>
+
+
+			</header>
+			<p></p>
+
+		</section>
+
+		<section id="one">
+			<header class="major">
+				<h2>Experience<br /></h2>
+			</header>
+
+			<!-- Exp One -->
+
+			<div class="col-6 col-12-xsmall">
+				<h3>Investigation Specialist </h3>
+				<h4><i>Amazon Development Center, Hyderabad </i> (Mar '22 to Present)</h4>
+				<h5>Responsibilities: Fraud Risk Investigation on Ecommerce orders using analyticalskills , Joined in a
+					fixed term role for an year and converted to Permanent role after meeting all
+					performance metrics. Risk Investigator Investigates and takes appropriate action on accounts that
+					are purchasing
+					retail or Gift card Items on Amazon platform</h5>
+
+
+				<ul>
+					<blockquote>
+
+
+						<li> Implementing investigation strategies to address potential risks or violations with buyer and seller policies, ensuring compliance with
+							performance metrics.</li>
+						<li>Conduct thorough investigations into suspected fraudulent activities, policy violations</li>
+						<li>Collect, analyze, and preserve evidence, including digital data, documents, to support investigations.</li>
+						<li>Take proactive action on accounts displaying unusual purchasing patterns, effectively
+							mitigating Credit Card Chargebacks and financial frauds</li>
+						<li>Utilize various tools and methodologies to analyze data and uncover patterns or discrepancies.</li>
+						<li>Ensure adherence to internal guidelines and external legal requirements.</li>
+
+						<li>Prepare clear and concise investigation reports detailing findings, evidence and  Justification for corrective action</li>
+						<li>Collaborate with both internal and external stakeholders via phone and email to communicate
+							investigation outcomes
+						</li>
+						<li>Taking Correct action on user/seller accounts to mitigate risks, improve internal controls, and prevent future incidents based on investigation outcomes</li>
+						<li>Escalate relevant issues or anomalies to appropriate teams based on established protocols.
+						</li>
+
+
+
+					</blockquote>
+
+				</ul>
+
+			</div>
+
+			<!-- Exp Two-->
+
+
+			<div class="col-6 col-12-xsmall">
+				<h3>Operations Executive </h3>
+				<h4><i>WIFI networks PVT ltd, Bengaluru </i> (Nov '14 to Mar '22)</h4>
+				<h5>Responsibilities: Clientrelationship, Preparing and sending MIS Reports, SLA Management</h5>
+
+
+				<ul>
+					<blockquote>
+
+
+						<li> Generating and Preparing Daily MIS reports using MySQL and Ms. Excel for clients.</li>
+						<li> Managed 15 to 20 Telecom clients from Airtel, MTN Africa and Roshan Afghanistan.</li>
+						<li>Collaborate with both internal and external stakeholders via phone and email to communicate
+							investigation outcomes</li>
+
+						<li>Translating the business requirement into technical requirement and interact with the
+							Internal Technical team.</li>
+
+
+
+					</blockquote>
+
+				</ul>
+
+			</div>
+
+
+			<!-- Exp Three-->
+
+
+			<div class="col-6 col-12-xsmall">
+				<h3>VAS Associate </h3>
+				<h4><i>VoiceGate India pvt ltd, Hyderabad </i> (May '12 to Oct '14)</h4>
+
+			</div>
+
+
+
+
+
+
+
+		</section>
+
+		<!-- Two -->
+		<section id="two">
+			<h2>PROJECTS</h2>
+
+		</section>
+
+
+		<!-- Projects -->
+		<section id="features">
+			<div class="container">
+				<div class="row">
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Feature #1 -->
+						<section>
+							<a href="https://github.com/ChaitanyaSimhadri/marketmixmodelling"
+								class="bordered-feature-image"><img src="{% static 'images/MMM (1).jpg' %}"
+									alt="" /></a>
+							<h2>Market Mix Modelling</h2>
+							<p>
+								Capstone project submitted for IIIT Bangalore. Here is the <a
+									href="https://www.youtube.com/watch?v=GVc1GY8B7kg">Presentation</a>
+								submitted as a part of project
+							</p>
+
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Feature #2 -->
+						<section>
+
+							<a href="https://github.com/ChaitanyaSimhadri/telecomchurn_kaggle"
+								class="bordered-feature-image"><img src="{% static 'images/Telecom churn.jpg' %}"
+									alt="" /></a>
+							<h2>Telecom Churn</h2>
+							<p>
+								This Project is submitted to IIIT bangalore for a <a
+									href="https://www.kaggle.com/competitions/ml-lab-i-c40/leaderboard">kaggle
+									competetion </a>
+								with in the group and stood top in the competetion with scaore of 0.237
+							</p>
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Feature #3 -->
+						<section>
+							<a href="https://github.com/ChaitanyaSimhadri/NewsPrediction_Casestudy"
+								class="bordered-feature-image"><img src="{% static 'images/news.jpg' %}" alt="" /></a>
+							<h2>News Popularity Prediction</h2>
+							<p>
+								This Project is submitted to IIIT bangalore for a <a
+									href="https://www.kaggle.com/competitions/ml-lab-ii-c40/leaderboard">kaggle
+									competetion </a>
+								with in the group.
+							</p>
+
+						</section>
+
+					</div>
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Feature #4 -->
+						<section>
+							<a href="{% url 'predict_price' %}" class="bordered-feature-image"><img
+									src="{% static 'images/House.jpg' %}" alt="" /></a>
+							<h2>Bengaluru House Price</h2>
+							<p>
+								An End to end ML Model deployed in Django server to predict House Prices in Bangalore
+								city.
+							</p>
+						</section>
+
+					</div>
+
+					<div class="col-3 col-6-medium col-12-small">
+
+						<!-- Feature #4 -->
+						<section>
+							<a href="{% url 'smsclassifier' %}" class="bordered-feature-image"><img
+									src="{% static 'images/SPAM.jpg' %}" alt="" /></a>
+							<h2>SMS Spam Prediction</h2>
+							<p>
+								An End to end ML Model deployed in Django server to predict if the Mesaage give is Spam
+								or ham.
+							</p>
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+
+	</footer>
+
+	<!-- Scripts -->
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

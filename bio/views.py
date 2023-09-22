@@ -1,0 +1,127 @@
+from django.shortcuts import render,redirect
+from django.http import HttpResponseRedirect,HttpResponse
+import pickle
+from .forms import predict_form,Contact_form
+import numpy as np
+import joblib
+from django.http import FileResponse
+from django.views import View
+from django.contrib import messages
+import json
+import os
+
+# import pandas as pd, numpy as np
+
+# from sklearn.model_selection import train_test_split
+# from sklearn.linear_model import LinearRegression,Lasso, Ridge
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.pipeline import make_pipeline
+# from sklearn.metrics import r2_score
+
+
+
+# Create your views here.
+
+def home(request):
+    return render(request, 'home.html',{})
+
+
+model_path1 = os.path.join(os.path.dirname(__file__), 'artifacts', 'columns.json')
+model_path2 = os.path.join(os.path.dirname(__file__), 'artifacts', 'model3.pickle')
+
+
+with open(model_path1, 'r') as file1:
+        columns = json.load(file1)['data_columns']
+        locations = columns[3:]
+with open(model_path2, 'rb') as file2:
+        model  = pickle.load(file2)
+
+
+
+def get_estimated_price(location,BHK,total_sqft,bath):
+       
+       try:
+                        loc_index = locations.index(location.lower())
+                            
+       except:
+                            
+                            loc_index = -1
+       x = np.zeros(len(columns))
+       x[0] = int(BHK)
+       x[1] = float(total_sqft)
+       x[2] = int(bath)
+       
+       if loc_index>=0:
+        
+        x[loc_index+1] =1
+        
+        
+       return round(model.predict([x])[0],2)
+
+
+          
+       
+        
+
+def predict(req):
+       submitted = False
+       y_pred = 0
+       
+       
+
+       if req.method == 'POST':
+              form =  predict_form(req.POST)
+              if form.is_valid():
+                     
+                     location = req.POST.get('Location')
+                     BHK = req.POST.get('Bedrooms')
+                     total_sqft = req.POST.get('SQFT')
+                     bath = req.POST.get('BathRoom')
+                     
+                     y_pred = get_estimated_price(location, BHK, total_sqft, bath)
+
+                     
+                     return render(req, 'predict.html', {'form': form, 'submitted': True, 'y_pred': y_pred,'location':location,'BHK':BHK,'total_sqft':total_sqft})
+       else:
+              
+              form =  predict_form(req.POST)
+              if 'submitted' in req.GET:
+                     
+                     submitted = True 
+              
+                  
+       
+       return render(req, 'predict.html',{'form':form, 'submitted':submitted,'y_pred':y_pred,'locations':locations})
+
+
+
+def contact(request):
+       if request.method =="POST":
+              form = Contact_form(request.POST)
+              if form.is_valid():
+                     form.save()
+              else:
+                     messages.success(request,('There is a Problem with your Form, Please try again'))
+                     return redirect('contact')
+              messages.success(request,('Your Message has been recorded succesfully. Will get back to you ASAP'))
+              return redirect('home')
+       
+       return render(request, 'contact.html',{})
+ 
+
+
+class DownloadFileView(View):
+    def get(self, request, file_name):
+        file_path = os.path.join(os.path.dirname(__file__), 'artifacts', 'NagaChaitanya_Resume.pdf')
+        if os.path.exists(file_path):
+            with open(file_path, 'rb') as file:
+                response = FileResponse(file)
+                response['Content-Disposition'] = f'attachment; filename="{file_name}"'
+                return response
+        else:
+            return HttpResponse("File not found", status=404)
+
+
+
+
+
