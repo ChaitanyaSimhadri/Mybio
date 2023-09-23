@@ -8,10 +8,7 @@ from django.views import View
 from django.contrib import messages
 import json
 import os
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression,Lasso, Ridge
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+
 from django.core.mail import send_mail
 
 # import pandas as pd, numpy as np
