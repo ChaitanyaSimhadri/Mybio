@@ -101,7 +101,7 @@ def contact(request):
               name = request.POST['name']
               email = request.POST['email']
               phone = request.POST['phone']
-              to_email = 'chaitanyasimhadrii@gmail.com'
+              to_email = 'chaitanyasimhadrii@outlook.com'
               message = request.POST['message']
               
               send_mail(name,message+ ''+phone+''+email,to_email,['hnagacha@gmail.com'],)
