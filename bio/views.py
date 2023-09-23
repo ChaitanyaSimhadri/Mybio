@@ -3,12 +3,15 @@ from django.http import HttpResponseRedirect,HttpResponse
 import pickle
 from .forms import predict_form,Contact_form
 import numpy as np
-import joblib
 from django.http import FileResponse
 from django.views import View
 from django.contrib import messages
 import json
 import os
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression,Lasso, Ridge
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
 
 # import pandas as pd, numpy as np
 
