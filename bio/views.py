@@ -127,6 +127,10 @@ class DownloadFileView(View):
                 return response
         else:
             return HttpResponse("File not found", status=404)
+        
+def error_404_view(request,exception):
+       return render(request,'404.html')
+
 
 
 

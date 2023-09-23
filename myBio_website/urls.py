@@ -15,3 +15,5 @@ urlpatterns = [
 
 
 ]
+
+handler404 = 'bio.views.error_404_view'
