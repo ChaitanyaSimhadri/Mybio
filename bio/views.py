@@ -103,7 +103,7 @@ def contact(request):
               phone = request.POST['phone']
               message = request.POST['message']
               
-              send_mail(name,message+phone,email,['hnagacha@gmail.com'],)
+              send_mail(name,message+phone,email,['chaitanyasimhadrii@outlook.com'],)
                      
                      
                      
