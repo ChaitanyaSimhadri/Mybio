@@ -12,6 +12,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression,Lasso, Ridge
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
+from django.core.mail import send_mail
 
 # import pandas as pd, numpy as np
 
@@ -100,16 +101,25 @@ def predict(request):
 
 def contact(request):
        if request.method =="POST":
-              form = Contact_form(request.POST)
-              if form.is_valid():
-                     form.save()
-              else:
-                     messages.success(request,('There is a Problem with your Form, Please try again'))
-                     return redirect('contact')
-              messages.success(request,('Your Message has been recorded succesfully. Will get back to you ASAP'))
-              return redirect('home')
+              name = request.POST['name']
+              email = request.POST['email']
+              phone = request.POST['phone']
+              message = request.POST['message']
+              
+              send_mail(
+
+                     name,
+                     email,
+                     phone,
+                     message,
+                     ['hnagacha@gmail.com'],
+
+              )
+              return render(request, 'contact.html',{'name':name})
+       else:
+
        
-       return render(request, 'contact.html',{})
+        return render(request, 'contact.html',{})
  
 
 
