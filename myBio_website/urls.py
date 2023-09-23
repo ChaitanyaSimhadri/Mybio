@@ -16,4 +16,4 @@ urlpatterns = [
 
 ]
 
-handler404 = 'bio.views.error_404_view'
+# handler404 = 'bio.views.error_404_view'

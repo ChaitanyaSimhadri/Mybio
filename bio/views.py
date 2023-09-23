@@ -26,6 +26,9 @@ from django.core.mail import send_mail
 def home(request):
     return render(request, 'home.html',{})
 
+def blog(request):
+    return render(request, 'blog.html',{})
+
 
 model_path1 = os.path.join(os.path.dirname(__file__), 'artifacts', 'columns.json')
 model_path2 = os.path.join(os.path.dirname(__file__), 'artifacts', 'model3.pickle')
