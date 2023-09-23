@@ -84,7 +84,7 @@ def predict(request):
                      y_pred = get_estimated_price(location, BHK, total_sqft, bath)
 
                      
-                     return render(request, 'predict.html', {'form': form, 'submitted': True, 'y_pred': y_pred,'location':location,'BHK':BHK,'total_sqft':total_sqft})
+                     return render(request, 'templates/predict.html', {'form': form, 'submitted': True, 'y_pred': y_pred,'location':location,'BHK':BHK,'total_sqft':total_sqft})
        else:
               
               form =  predict_form(request.POST)
@@ -94,7 +94,7 @@ def predict(request):
               
                   
        
-       return render(request, 'predict.html',{'form':form, 'submitted':submitted,'y_pred':y_pred,'locations':locations})
+       return render(request, 'templates/predict.html',{'form':form, 'submitted':submitted,'y_pred':y_pred,'locations':locations})
 
 
 
