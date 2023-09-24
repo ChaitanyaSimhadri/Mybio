@@ -13,3 +13,5 @@ urlpatterns = [
 
 
 ]
+
+handler404 = views.error_404_view

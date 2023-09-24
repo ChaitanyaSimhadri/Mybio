@@ -92,3 +92,9 @@ def sms_spam(request):
            
     return render(request, 'sms.html',{'form': form, 'submitted': True, 'y_pred': y_pred})
 
+
+def error_404_view(request,exception):
+       return render(request,'404.html',status=404)
+
+
+

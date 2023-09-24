@@ -1,11 +1,17 @@
 
 from django.contrib import admin
 from django.urls import path, include
+from bio.views import error_404_view
+
+
+
 
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
